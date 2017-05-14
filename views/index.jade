@@ -1,0 +1,775 @@
+extends layout
+//index在服务端渲染文件
+block content
+	article
+		section.header
+			.flex.mar_b10
+				p.logo
+					img(src="../public/images/logo.png")
+				.flex1
+					h1.name 稍微麻辣火锅外卖
+					p.mar_b5.grey 营业时间：周一至周日 09:00-20:00
+					p.grey 店长电话：
+						a(href="tel:18663920303") 18663920303
+			.sale_info
+				p.notice 城区满80元起送，外地一律顺丰到付
+				p.mar_b5.grey 满80元免配送费
+					i.sale_icon.free 免
+				p.mar_b5.grey 电汤锅押金100，两日内送回，满200上门取回
+					i.sale_icon.giveaway 押
+		p.tab
+			span.tab_btn.active#guodi 锅底
+			span.tab_btn#zhanliao 蘸料
+			span.tab_btn#roulei 肉类
+			span.tab_btn#wanzi 丸子类
+			span.tab_btn#haixian 海鲜类
+			span.tab_btn#qingcai 青菜类
+			span.tab_btn#doulao 豆捞系列
+			span.tab_btn#qita 其它
+
+		section.menu_bar#guodi_panel(style="display:block")
+			h4.module_title 锅底
+				span.red (必选)
+				button.tab_btn#btn_add
+					span.red add
+			ul.menu_list
+				li.item
+					.product_info
+						p
+							img(src='../public/images/malaguo.jpg')
+						.pad_10
+							p.title.ellipsis 麻辣锅
+							p.red
+								| ¥ 
+								i.price 15.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/fanqieguo.jpg')
+						.pad_10
+							p.title.ellipsis 蕃茄锅
+							p.red
+								| &yen; 
+								i.price 15.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/sanxianguo.jpg')
+						.pad_10
+							p.title.ellipsis 三鲜锅
+							p.red
+								| ¥ 
+								i.price 15.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/junguguo.jpg')
+						.pad_10
+							p.title.ellipsis 菌菇锅
+							p.red
+								| ¥ 
+								i.price 15.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+
+		section.menu_bar#zhanliao_panel
+			h4.module_title 蘸料
+				span.red (必选)
+			ul.menu_list
+				li.item
+					.product_info
+						p
+							img(src='../public/images/zhanliao.jpg')
+						.pad_10
+							p.title.ellipsis 蘸料
+							p.red
+								| ¥ 
+								i.price 4.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/lajiaojiang.jpg')
+						.pad_10
+							p.title.ellipsis 秘制泰汁辣椒酱
+							p.red
+								| &yen; 
+								i.price 13.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+
+		section.menu_bar#roulei_panel
+			h4.module_title 肉类
+			ul.menu_list
+				li.item
+					.product_info
+						p
+							img(src='../public/images/yangrou.jpg')
+						.pad_10
+							p.title.ellipsis 手切羊肉
+							p.red
+								| ¥ 
+								i.price 30.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/niurou.jpg')
+						.pad_10
+							p.title.ellipsis 手切牛肉
+							p.red
+								| &yen; 
+								i.price 30.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/wuhuarou.jpg')
+						.pad_10
+							p.title.ellipsis 五花肉
+							p.red
+								| ¥ 
+								i.price 15.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/niudu.jpg')
+						.pad_10
+							p.title.ellipsis 自制牛肚
+							p.red
+								| ¥ 
+								i.price 30.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/niubaiye.jpg')
+						.pad_10
+							p.title.ellipsis 牛百叶
+							p.red
+								| ¥ 
+								i.price 15.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/wucanrou.jpg')
+						.pad_10
+							p.title.ellipsis 午餐肉
+							p.red
+								| ¥ 
+								i.price 25.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+
+		section.menu_bar#wanzi_panel
+			h4.module_title 丸子类
+			ul.menu_list
+				li.item
+					.product_info
+						p
+							img(src='../public/images/yudoufu.jpg')
+						.pad_10
+							p.title.ellipsis 鱼豆腐
+							p.red
+								| ¥ 
+								i.price 10.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/tianbula.jpg')
+						.pad_10
+							p.title.ellipsis 甜不辣
+							p.red
+								| &yen; 
+								i.price 10.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/niuwan.jpg')
+						.pad_10
+							p.title.ellipsis 撒尿牛丸
+							p.red
+								| ¥ 
+								i.price 10.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/moyuwan.jpg')
+						.pad_10
+							p.title.ellipsis 墨鱼丸
+							p.red
+								| ¥ 
+								i.price 10.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/qinqinchang.jpg')
+						.pad_10
+							p.title.ellipsis 亲亲肠
+							p.red
+								| ¥ 
+								i.price 10.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/anchundan.jpg')
+						.pad_10
+							p.title.ellipsis 鹌鹑蛋
+							p.red
+								| ¥ 
+								i.price 10.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+
+		section.menu_bar#haixian_panel
+			h4.module_title 海鲜类
+			ul.menu_list
+				li.item
+					.product_info
+						p
+							img(src='../public/images/haixia.jpg')
+						.pad_10
+							p.title.ellipsis 海虾
+							p.red
+								| ¥ 
+								i.price 38.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/shanbei.jpg')
+						.pad_10
+							p.title.ellipsis 扇贝
+							p.red
+								| &yen; 
+								i.price 15.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/hailizi.jpg')
+						.pad_10
+							p.title.ellipsis 海蛎子
+							p.red
+								| ¥ 
+								i.price 15.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/biguanyu.jpg')
+						.pad_10
+							p.title.ellipsis 笔管鱼
+							p.red
+								| ¥ 
+								i.price 15.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/gala.jpg')
+						.pad_10
+							p.title.ellipsis 蛤蜊
+							p.red
+								| ¥ 
+								i.price 10.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+
+		section.menu_bar#qingcai_panel
+			h4.module_title 青菜类
+			ul.menu_list
+				li.item
+					.product_info
+						p
+							img(src='../public/images/jinzhengu.jpg')
+						.pad_10
+							p.title.ellipsis 金针菇
+							p.red
+								| ¥ 
+								i.price 6.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/muer.jpg')
+						.pad_10
+							p.title.ellipsis 木耳
+							p.red
+								| &yen; 
+								i.price 6.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/bocai.jpg')
+						.pad_10
+							p.title.ellipsis 菠菜
+							p.red
+								| ¥ 
+								i.price 6.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/tonghao.jpg')
+						.pad_10
+							p.title.ellipsis 茼蒿
+							p.red
+								| ¥ 
+								i.price 6.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/wawacai.jpg')
+						.pad_10
+							p.title.ellipsis 娃娃菜
+							p.red
+								| ¥ 
+								i.price 6.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/baicai.jpg')
+						.pad_10
+							p.title.ellipsis 白菜
+							p.red
+								| ¥ 
+								i.price 6.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/youcai.jpg')
+						.pad_10
+							p.title.ellipsis 油菜
+							p.red
+								| &yen; 
+								i.price 6.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/tudoupian.jpg')
+						.pad_10
+							p.title.ellipsis 土豆片
+							p.red
+								| ¥ 
+								i.price 6.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/haidaijie.jpg')
+						.pad_10
+							p.title.ellipsis 海带结
+							p.red
+								| ¥ 
+								i.price 6.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/oupian.jpg')
+						.pad_10
+							p.title.ellipsis 藕片
+							p.red
+								| ¥ 
+								i.price 6.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0			
+				li.item
+					.product_info
+						p
+							img(src='../public/images/shengcai.jpg')
+						.pad_10
+							p.title.ellipsis 生菜
+							p.red
+								| ¥ 
+								i.price 6.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+
+		section.menu_bar#doulao_panel
+			h4.module_title 豆捞系列
+			ul.menu_list
+				li.item
+					.product_info
+						p
+							img(src='../public/images/niurouhua.jpg')
+						.pad_10
+							p.title.ellipsis 牛肉滑
+							p.red
+								| ¥ 
+								i.price 22.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/xiahua.jpg')
+						.pad_10
+							p.title.ellipsis 虾滑
+							p.red
+								| &yen; 
+								i.price 26.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/xiehuangbao.jpg')
+						.pad_10
+							p.title.ellipsis 蟹黄包
+							p.red
+								| ¥ 
+								i.price 17.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/haidanbao.jpg')
+						.pad_10
+							p.title.ellipsis 海胆包
+							p.red
+								| ¥ 
+								i.price 17.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/zhishibao.jpg')
+						.pad_10
+							p.title.ellipsis 芝士包
+							p.red
+								| ¥ 
+								i.price 18.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/longxiaqiu.jpg')
+						.pad_10
+							p.title.ellipsis 龙虾球
+							p.red
+								| ¥ 
+								i.price 18.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/haishenfudai.jpg')
+						.pad_10
+							p.title.ellipsis 海参福袋
+							p.red
+								| &yen; 
+								i.price 20.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/danhuanggao.jpg')
+						.pad_10
+							p.title.ellipsis 咸蛋黄年糕
+							p.red
+								| ¥ 
+								i.price 15.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/xieroubang.jpg')
+						.pad_10
+							p.title.ellipsis 蟹肉棒
+							p.red
+								| ¥ 
+								i.price 18.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/bayuwan.jpg')
+						.pad_10
+							p.title.ellipsis 鲅鱼丸子
+							p.red
+								| ¥ 
+								i.price 18.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0			
+				li.item
+					.product_info
+						p
+							img(src='../public/images/kaochang.jpg')
+						.pad_10
+							p.title.ellipsis 台湾烤肠
+							p.red
+								| ¥ 
+								i.price 12.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+
+		section.menu_bar#qita_panel
+			h4.module_title 其它
+			ul.menu_list
+				li.item
+					.product_info
+						p
+							img(src='../public/images/niurouhua.jpg')
+						.pad_10
+							p.title.ellipsis 鸡蛋
+							p.red
+								| ¥ 
+								i.price 1.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/xiahua.jpg')
+						.pad_10
+							p.title.ellipsis 手擀面
+							p.red
+								| &yen; 
+								i.price 5.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/xiehuangbao.jpg')
+						.pad_10
+							p.title.ellipsis 方便面
+							p.red
+								| ¥ 
+								i.price 1.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/haidanbao.jpg')
+						.pad_10
+							p.title.ellipsis 魔芋
+							p.red
+								| ¥ 
+								i.price 6.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/zhishibao.jpg')
+						.pad_10
+							p.title.ellipsis 粉丝团
+							p.red
+								| ¥ 
+								i.price 3.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/longxiaqiu.jpg')
+						.pad_10
+							p.title.ellipsis 宽粉
+							p.red
+								| ¥ 
+								i.price 6.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/haishenfudai.jpg')
+						.pad_10
+							p.title.ellipsis 豆腐皮
+							p.red
+								| &yen; 
+								i.price 5.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/danhuanggao.jpg')
+						.pad_10
+							p.title.ellipsis 兰花干
+							p.red
+								| ¥ 
+								i.price 15.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+				li.item
+					.product_info
+						p
+							img(src='../public/images/xieroubang.jpg')
+						.pad_10
+							p.title.ellipsis 油面筋
+							p.red
+								| ¥ 
+								i.price 10.00
+						span.minus_btn
+						span.add_btn
+						span.quantity_bar
+							i.quantity 0
+
+		.bottom_bar
+			.shop_cart
+				span.count 1
+			p.tips 满80元起送
+			a.order_commit
+				i.commit_btn 选好了
+	script(type="text/javascript" src="../public/javascripts/zepto.min.js")
+	script(type="text/javascript" src="../public/javascripts/zepto.plugin.js")

@@ -1,0 +1,85 @@
+/* reset & shortcut */
+*{margin:0;padding:0;border:0;outline:0;font:inherit;vertical-align:baseline;-webkit-tap-highlight-color:rgba(0,0,0,0)}
+html,body,form,fieldset,p,div,h1,h2,h3,h4,h5,h6{-webkit-text-size-adjust:none}
+html{font-size: 62.5%}
+body{margin:0 auto;max-width:640px;min-width:320px;background:#f8f8f8;color:#333;font-size:1.2rem}
+ol,ul,li{list-style:none}
+h1,h2,h3,h4,h5,h6{font-weight:normal}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}
+strong,var,em,i{font-style:normal;font-weight:normal}
+a{text-decoration:none;color:#333}
+img{display:block;width:100%}
+del{text-decoration:line-through}
+input{display:block;width:100%;-webkit-appearance:none}
+textarea{width:100%;min-height:66px;background:#fff;resize:none}
+::-webkit-input-placeholder{color:#999!important} 
+:-moz-placeholder{color:#999!important} 
+::-moz-placeholder{color:#999!important}
+.flex{display:box;display:-webkit-box;display:-moz-box;display:-webkit-flex;display:flex}
+.flex1{-webkit-box-flex:1;-moz-box-flex:1;width:100%;-webkit-flex:1;flex:1}
+.overhidden{overflow:hidden}
+.float_l{float:left}
+.float_r{float:right}
+.mar_b5{margin-bottom:5px}
+.mar_r5{margin-right:5px}
+.mar_t10{margin-top:10px}
+.mar_b10{margin-bottom:10px}
+.pad_10{padding:10px}
+.bg_white{background:#fff}
+.align_l{text-align:left}
+.align_c{text-align:center}
+.align_r{text-align:right}
+.font12{font-size:12px}
+.red{color:#dc4950}
+.gray{color:#999}
+.ellipsis{overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.module_title{padding: 0 10px;border-bottom:1px solid #ddd;line-height:45px;font-size:16px;}
+/* msgbox module */
+.masker{display:box;display:-webkit-box;display:-moz-box;display:-webkit-flex;display:flex;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.15);-webkit-box-align:center;-webkit-align-items:center;-moz-align-items:center;-o-align-items:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-moz-justify-content:center;-o-justify-content:center;justify-content:center;z-index:1000}
+.IOS .msgbox_heading{border-bottom:1px solid #eee;line-height:44px}
+.IOS .msgbox_btnBar{display:flex;border-top:1px solid #eee}
+.IOS .msgbox_btnBar input{margin:10px 0;-webkit-box-flex:1;flex:1;-webkit-flex:1;background:#fff;line-height:24px}
+.IOS .msgbox_btnBar input:last-child{border-left:1px solid #eee}
+.IOS .int_bar{padding:10px 0;border-bottom:1px solid #eee;line-height:18px}
+.msgbox_content{padding:15px;font-size:14px}
+.Android .msgbox_heading{padding:10px 0;border-bottom:1px solid rgba(232,232,232,.6);line-height:24px}
+.Android .msgbox_btnBar{display:box;display:-webkit-box;display:-moz-box;display:-webkit-flex;display:flex;border-top:1px solid rgba(232,232,232,.6)}
+.Android .msgbox_btnBar input{padding:10px 0;width:50%;background:transparent;line-height:24px;color:rgba(232,232,232,.6)}
+.Android .msgbox_btnBar input:last-child{margin-left:-1px;border-left:1px solid rgba(232,232,232,.6)}
+.Android .int_bar{padding:10px 0;background:transparent;border-bottom:1px solid rgba(232,232,232,.6);color:#fff}
+.Android .int_bar input,.Android .int_bar textarea{background:rgba(255,255,255,0);color:#fff}
+/* other style */
+.header{padding:10px;margin-bottom:10px;background:#fff;border-bottom:1px solid #ddd;font-size:14px}
+.logo{margin-right:10px;width:70px;height:70px;border:1px solid #ddd}
+.name{margin-bottom:10px;line-height:24px;font-size:16px}
+.sale_info{padding-top:10px;border-top:2px dotted #ddd;font-size:12px}
+#notice{margin-bottom:7px;font-size:14px;color:#333}
+.sale_icon{display:inline-block;margin-right:3px;width:18px;height:18px;border-radius:2px;text-align:center;line-height:18px;font-size:12px;color:#fff}
+.free{background:rgba(220,73,80,.9)}
+.giveaway{background:rgba(249,115,86,.9)}
+.tab{margin-bottom:10px;padding:20px 10px 10px 10px;background:#fff;border-top:1px solid #ddd;border-bottom:1px solid #ddd;
+	font-size: 14px}
+.tab_btn{display:inline-block;margin:0 10px 10px 0;padding:5px 10px;border:1px solid #ddd;border-radius:5px;text-align:center;color:#999;}
+.tab_btn : first-child{margin-left:0}
+.tab .active{border:1px solid #f15353;color:#f15353}
+.menu_bar{display:none;margin-bottom:10px;padding-bottom:50px;background:#fff;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
+.menu_list{padding:10px 10px 0 10px;background:#fff;overflow:hidden}
+.menu_list>.item{box-sizing:border-box;float:left;padding-bottom:10px;width:50%}
+.menu_list>.item:nth-child(2n-1)>.product_info{margin-right:5px}
+.menu_list>.item:nth-child(2n)>.product_info{margin-left:5px}
+.product_info{position:relative;border:1px solid #ddd}
+.title{margin-bottom:10px;height:18px;line-height:18px;font-size:14px}
+.price{font-size:16px;color:#dc4950}
+.quantity_bar{position:absolute;display:none;top:0;right:0;width:0;height:0;border-top:36px solid #33c748;border-left:36px solid transparent}
+.quantity{position:absolute;top:-32px;right:3px;width:16px;height:16px;text-align:center;line-height:16px;font-size:16px;font-style:italic;color:#fff}
+.add_btn{position:absolute;display:block;bottom:0;right:0;padding:5px;width:30px;height:30px;background:url(../images/add.png) center no-repeat;background-size:30px 30px}
+.minus_btn{position:absolute;display:none;bottom:0;right:40px;padding:5px;width:30px;height:30px;background:url(../images/minus.png) center no-repeat;background-size:30px 30px}
+.bottom_bar{position:fixed;left:0;right:0;bottom:0;height:48px;background:rgba(220,73,80,.9);font-size:14px}
+.shop_cart{position:absolute;bottom:0;left:18px;width:52px;height:52px;border:2px solid rgba(220,73,80,.7);border-radius:52px;background:url(../images/cart.png) center no-repeat;background-size:52px 52px}
+.count{position:absolute;display:none;top:-5px;right:0;width:16px;height:16px;background:#fff;border:1px solid #dc4950;border-radius:16px;text-align:center;line-height:16px;color:#dc4950}
+.tips{padding:0 110px 0 84px;line-height:48px;color:#fff}
+.order_commit{position:absolute;top:0;right:0;padding:6px 16px}
+.commit_btn{display:inline-block;width:77px;height:36px;text-align:center;line-height:36px;color:#aaa;font-size:14px;border-radius:3px;background:rgba(221,221,221,1)}
+#btn_add{width: 50px;height: 28px;float: right;margin-top: 8px;line-height: 16px;background-color:#fff;}
+#btn_add:active{border:1px solid #dc4950;}
