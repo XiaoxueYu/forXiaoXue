@@ -1,5 +1,6 @@
-$(function(){
-  $('.del button').click(function(e){
+
+$(function () {
+  $('.delete').click(function(e){
     console.log('1');
     var target = $(e.target)
     var id = target.data('id')
@@ -7,8 +8,7 @@ $(function(){
 
     $.ajax({
       type:'DELETE',
-      url:'/admin/list?id' + id
-
+      url:'/admin/meal/list?id' + id
     })
     .done(function(results){
       if(results.success===1){
@@ -20,3 +20,5 @@ $(function(){
   })
 
 })
+
+//ssdddvd

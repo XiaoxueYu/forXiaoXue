@@ -1,4 +1,4 @@
-extends layout
+extends index_layout
 //index在服务端渲染文件
 block content
 	article
@@ -10,7 +10,7 @@ block content
 					h1.name 稍微麻辣火锅外卖
 					p.mar_b5.grey 营业时间：周一至周日 09:00-20:00
 					p.grey 店长电话：
-						a(href="tel:18663920303") 18663920303
+						a(href="tel:12345678903") 12345678903
 			.sale_info
 				p.notice 城区满80元起送，外地一律顺丰到付
 				p.mar_b5.grey 满80元免配送费
@@ -30,8 +30,6 @@ block content
 		section.menu_bar#guodi_panel(style="display:block")
 			h4.module_title 锅底
 				span.red (必选)
-				button.tab_btn#btn_add
-					span.red add
 			ul.menu_list
 				li.item
 					.product_info
@@ -771,5 +769,5 @@ block content
 			p.tips 满80元起送
 			a.order_commit
 				i.commit_btn 选好了
-	script(type="text/javascript" src="../public/javascripts/zepto.min.js")
-	script(type="text/javascript" src="../public/javascripts/zepto.plugin.js")
+	script(type="text/javascript" src="/public/javascripts/zepto.min.js")
+	script(type="text/javascript" src="/public/javascripts/zepto.plugin.js")

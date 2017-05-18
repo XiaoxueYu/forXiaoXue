@@ -1,27 +1,38 @@
 extends layout
-//index在服务端渲染文件
+
 block content
-	.container
-		.row
-        form.form-horizontal(method="post",action="/admin/movie")
-            input(type="hidden",name="menu[_id]",value="#{menu._id}")
-            .form-group
-                label.col-sm-2.control-label(for="inputTitle") 菜单名字
-                .col-sm-10
-                  input#inputTitle.form-control(type="text" name="movie[title]"，value="#{movie.title}")
-            .form-group
-                label.col-sm-2.control-label(for="inputClass") 菜单分类
-                .col-sm-10
-                  select#inputClass.form-control(type="text" name="movie[class]"，value="#{movie.class}")
-            .form-group
-                    label.col-sm-2.control-label(for="inputCountry") 价格
-                    .col-sm-10
-                        input#inputMoney.form-control(type="text" name="movie[money]"，value="#{movie.money}")
-            .form-group
-                label.col-sm-2.control-label(for="inputPicture") 图片
-                .col-sm-10
-                    input#inputPicture.form-control(type="text" name="movie[picture]"，value="#{movie.picture}")
-            
-            .form-group
-                .col-sm-offset-2.col-sm-10
-                button.btn.btn-default(type="submit") 录入
+  .container
+    .row
+      form.form-horizontal(method="post", action="/admin/meal")
+        //- if meal._id
+        //-   input(type="hidden", name="meal[_id]", value=meal._id)
+        .form-group
+          label.col-sm-2.control-label 分类选择
+          each cat in categories
+            label.radio-inline
+              if meal.category
+                input(type="radio", name="meal[category]", value=cat._id, checked=cat._id.toString()==meal.category.toString())
+              else
+                input(type="radio", name="meal[category]", value=cat._id)
+              | #{cat.name}
+        .form-group
+          label.col-sm-2.control-label(for="inputTitle") 菜单名字
+          .col-sm-10
+            input#inputTitle.form-control(type="text", name="meal[title]", value=meal.title)
+        .form-group
+          label.col-sm-2.control-label(for="inputPoster") 图片地址
+          .col-sm-10
+            input#inputPoster.form-control(type="text", name="meal[poster]", value=meal.poster)
+        //- .form-group
+        //-   label.col-sm-2.control-label(for="upload") 图片上传
+        //-   .col-sm-10
+        //-     input#upload(type="file", name="upload",multiple="multiple")
+        .form-group
+          label.col-sm-2.control-label(for="inputmoney") 价格
+          .col-sm-10
+            input#inputMoney.form-control(type="text", name="meal[money]", value=meal.money)
+        .form-group
+          .col-sm-offset-2.col-sm-10
+          button.btn.btn-default(type="submit") 录入
+
+  script(src='/public/javascripts/admin.min.js')

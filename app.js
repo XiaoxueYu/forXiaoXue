@@ -4,7 +4,8 @@ var express = require('express')
 ,favicon = require('serve-favicon')
 ,logger = require('morgan')
 ,cookieParser = require('cookie-parser')
-,bodyParser = require('body-parser')
+, bodyParser = require('body-parser')
+,fs = require('fs')
 
 //以下是新加的
 ,session = require('express-session')
@@ -15,12 +16,32 @@ var express = require('express')
 
 
 var routes = require('./routes/index'),
-    users = require('./routes/user'),
-    meal = require('./routes/meal_list');
-    admin = require('./routes/admin')
-    
+    user = require('./routes/user'),
+    meal = require('./routes/meal'),
+    category = require('./routes/category')
+    //comment= require('./routes/comment')   
+    //order = require('./routes/order)
 var app = express();
 
+var models_path = __dirname + '/models'
+// var walk = function(path) {
+//   fs
+//     .readdirSync(path)
+//     .forEach(function(file) {
+//       var newPath = path + '/' + file
+//       var stat = fs.statSync(newPath)
+
+//       if (stat.isFile()) {
+//         if (/(.*)\.(js|coffee)/.test(file)) {
+//           require(newPath)
+//         }
+//       }
+//       else if (stat.isDirectory()) {
+//         walk(newPath)
+//       }
+//     })
+// }
+// walk(models_path)
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine','jade');
@@ -46,10 +67,10 @@ app.use('/public',express.static(path.join(__dirname, 'public')));
 // app.use(serveStatic(path.join(__dirname, 'public')));
 app.locals.moment = require('moment')
 //Increasing routes
-app.use('/', routes);
-app.use('/',users);
+app.use('/',routes);
+app.use('/',user);
 app.use('/',meal);
-app.use('/',admin)
+app.use('/',category)
 
 
 // catch 404 and forward to error handler
@@ -86,7 +107,7 @@ app.use(function(err, req, res, next) {
 //以下是新加的
 app.use(function(req, res, next){
   res.locals.user = req.session.user;
-  res.locals.post = req.session.post;
+ // res.locals.post = req.session.post;
   var error = req.flash('error');
   res.locals.error = req.session? req.session.error : null
  
@@ -97,4 +118,4 @@ app.use(function(req, res, next){
 
 
 module.exports = app;
-//testPushing001    
+    

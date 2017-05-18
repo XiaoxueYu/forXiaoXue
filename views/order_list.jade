@@ -1,0 +1,24 @@
+extends layout
+
+block content
+    .container
+        .row
+            table.table.table-hover.table-bordered
+                thead
+                    tr
+                        th 用户
+                        th 电话 
+                        th 地址
+                        th 菜单
+                        th 总价
+                        th 生成时间
+                tbody
+                    each item in order
+                        tr(class="item-id-#{item._id}")
+                            td #{item.usr_name}
+                            td #{item.usr_phone}
+                            td #{item.usr_address}
+                            td #{item.content}
+                            td #{item.money}
+                            td #{moment(item.meta.createdAt).format('MM/DD/YYYY')}
+                    

@@ -1,8 +1,16 @@
 var mongoose = require('mongoose')
+var Schema = mongoose.Schema
+var ObjectId = Schema.Types.ObjectId
 
-var MealSchema = new mongoose.Schema({
-    name:String,
-    category:String,
+var MealSchema = new Schema({
+    title: {
+        type: String,
+        unique: true
+    },
+    category: {
+    type: ObjectId,
+    ref: 'categories'
+    },
     poster:String,
     money:Number,
     meta:{
@@ -37,8 +45,12 @@ MealSchema.statics = {
         return this 
         .findOne({_id:id})
         .exec(cb)
-    }
-
+    },
+    findByTitle:function(_title,cb){
+		return this
+		.findOne({title: _title})
+		.exec(cb)
+	}
 }
 
 module.exports = MealSchema

@@ -11,7 +11,7 @@ strong,var,em,i{font-style:normal;font-weight:normal}
 a{text-decoration:none;color:#333}
 img{display:block;width:100%}
 del{text-decoration:line-through}
-input{display:block;width:100%;-webkit-appearance:none}
+input{display:block;margin-left: 0}
 textarea{width:100%;min-height:66px;background:#fff;resize:none}
 ::-webkit-input-placeholder{color:#999!important} 
 :-moz-placeholder{color:#999!important} 
@@ -50,8 +50,8 @@ textarea{width:100%;min-height:66px;background:#fff;resize:none}
 .Android .int_bar{padding:10px 0;background:transparent;border-bottom:1px solid rgba(232,232,232,.6);color:#fff}
 .Android .int_bar input,.Android .int_bar textarea{background:rgba(255,255,255,0);color:#fff}
 /* other style */
-.header{padding:10px;margin-bottom:10px;background:#fff;border-bottom:1px solid #ddd;font-size:14px}
-.logo{margin-right:10px;width:70px;height:70px;border:1px solid #ddd}
+.header{padding:0 10px;margin-bottom:10px;background:#fff;border-bottom:1px solid #ddd;font-size:14px}
+.logo{margin-right:10px;margin-top:25px;width:70px;height:70px;border:1px solid #ddd}
 .name{margin-bottom:10px;line-height:24px;font-size:16px}
 .sale_info{padding-top:10px;border-top:2px dotted #ddd;font-size:12px}
 #notice{margin-bottom:7px;font-size:14px;color:#333}
@@ -61,7 +61,7 @@ textarea{width:100%;min-height:66px;background:#fff;resize:none}
 .tab{margin-bottom:10px;padding:20px 10px 10px 10px;background:#fff;border-top:1px solid #ddd;border-bottom:1px solid #ddd;
 	font-size: 14px}
 .tab_btn{display:inline-block;margin:0 10px 10px 0;padding:5px 10px;border:1px solid #ddd;border-radius:5px;text-align:center;color:#999;}
-.tab_btn : first-child{margin-left:0}
+.tab_btn:first-child{margin-left:0}
 .tab .active{border:1px solid #f15353;color:#f15353}
 .menu_bar{display:none;margin-bottom:10px;padding-bottom:50px;background:#fff;border-top:1px solid #ddd;border-bottom:1px solid #ddd}
 .menu_list{padding:10px 10px 0 10px;background:#fff;overflow:hidden}
@@ -83,3 +83,6 @@ textarea{width:100%;min-height:66px;background:#fff;resize:none}
 .commit_btn{display:inline-block;width:77px;height:36px;text-align:center;line-height:36px;color:#aaa;font-size:14px;border-radius:3px;background:rgba(221,221,221,1)}
 #btn_add{width: 50px;height: 28px;float: right;margin-top: 8px;line-height: 16px;background-color:#fff;}
 #btn_add:active{border:1px solid #dc4950;}
+.row {
+    margin:0 !important;
+}
