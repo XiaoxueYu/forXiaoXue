@@ -74,6 +74,30 @@ router.post('/user/signup',function(req, res) {
     }
   })
 })
+// userlist page
+router.get('/admin/user/list',function (req, res) {
+  var user = req.session.user;
+	console.log(user);
+	if(!user){
+		return res.redirect('/login');
+	}
+  if (user.role === 0) {
+    console.log('权限不足！')
+  } else {
+    User.fetch(function (err, users) {
+      if (err) {
+        console.log(err)
+      }
+
+      res.render('user_list', {
+        title: '用户列表页',
+        users: users,
+        user:req.session.user
+      })
+    })
+  }
+})
+
 //登出
 router.get("/logout",checkLogin);
 router.get("/logout",function(req,res) {

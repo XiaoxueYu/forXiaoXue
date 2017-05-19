@@ -126,38 +126,39 @@ router.get('/admin/meal/update/:id',function(req, res) {
 // router.post('/admin/meal', signinRequired)
 // router.post('/admin/meal', adminRequired)
 router.post('/admin/meal',function (req, res) {
-  
+  var id = req.body.meal._id
   var nmeal = req.body.meal
-  console.log(nmeal)
-  //为什么输出是空？
-  var title = nmeal.title
-  var _meal
+  //console.log(nmeal)
+  var _meal 
 
   // if (req.poster) {
   //   mealObj.poster = req.poster
   // }
-
-  if (title) {
-    Meal.findByTitle(title, function(err, meal) {
+  
+  if (id) {
+    Meal.findById(id, function(err, meal) {
       if (err) {
         console.log(err)
       }
 
       _meal = _.extend(meal, nmeal)
-      _meal.save(function(err, meal) {
-        if (err) {
-          console.log(err)
-        }
 
-        res.redirect('/meal/' + meal._id)
-      })
+        _meal.save(function (err, meal) {
+          if (err) {
+            console.log(err)
+          }
+
+          res.redirect('/meal/' + meal._id)
+        })
+      
+
     })
   }
   else {
       _meal = new Meal(nmeal)
 
-    var categoryId = mealObj.category
-    var categoryName = mealObj.categoryName
+    var categoryId = nmeal.category
+    var categoryName = nmeal.categoryName
 
     _meal.save(function(err, meal) {
       if (err) {
@@ -202,7 +203,8 @@ router.get('/admin/meal/list' ,function(req, res) {
 
       res.render('list', {
         title: '列表页',
-        meal: meal
+        meal: meal,
+        user:req.session.user
       })
     })
 })
@@ -210,7 +212,7 @@ router.get('/admin/meal/list' ,function(req, res) {
 // list page
 // router.delete('/admin/meal/list', signinRequired)
 // router.delete('/admin/meal/list', adminRequired)
-router.delete('/admin/meal/list',function(req, res) {
+router.delete('/admin/list',function(req, res) {
   var id = req.query.id
 
   if (id) {

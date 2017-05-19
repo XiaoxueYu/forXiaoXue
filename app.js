@@ -18,9 +18,9 @@ var express = require('express')
 var routes = require('./routes/index'),
     user = require('./routes/user'),
     meal = require('./routes/meal'),
-    category = require('./routes/category')
-    //comment= require('./routes/comment')   
-    //order = require('./routes/order)
+    category = require('./routes/category'),
+//    comment= require('./routes/comment'),   
+    order = require('./routes/order')
 var app = express();
 
 var models_path = __dirname + '/models'
@@ -71,14 +71,15 @@ app.use('/',routes);
 app.use('/',user);
 app.use('/',meal);
 app.use('/',category)
-
+//app.use('/', comment)
+app.use('/',order)
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  var err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
+// app.use(function(req, res, next) {
+//   var err = new Error('Not Found');
+//   err.status = 404;
+//   next(err);
+// });
 
 // error handlers
 

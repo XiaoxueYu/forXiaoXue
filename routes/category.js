@@ -15,7 +15,8 @@ var Category = mongoose.model('Category')
 router.get("/admin/category/new",function(req,res) {
 	res.render("category_admin",{
     title: "后台分类录入页",
-    category: {}
+    category: {},
+    user:req.session.user
 	});
 });
 
@@ -47,10 +48,27 @@ router.get('/admin/category/list', function (req, res) {
 
     res.render('category_list', {
       title: '分类列表页',
-      categories: categories
+      categories: categories,
+      user:req.session.user
     })
   })
 
+})
+//delete
+router.delete('/admin/list',function(req, res) {
+  var id = req.query.id
+
+  if (id) {
+    Category.remove({_id: id}, function(err, categoires) {
+      if (err) {
+        console.log(err)
+        res.json({success: 0})
+      }
+      else {
+        res.json({success: 1})
+      }
+    })
+  }
 })
 function signinRequired (req, res, next) {
   var user = req.session.user

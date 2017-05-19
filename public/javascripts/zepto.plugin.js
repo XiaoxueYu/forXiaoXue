@@ -175,7 +175,9 @@
         return this.each(function () { new d(this, a) })
     }
 }(window.Zepto, window),
+    
     $(function () {
+    var total
         $(".add_btn").count(),
             $(".tab_btn").on("click", function () {
             $(this).addClass("active"),
@@ -187,13 +189,14 @@
                 $("#" + c).siblings(".menu_bar").css("display", "none")
             }),
             $(".commit_btn").on("click", function () {
-            var total = 0, b = "", c = "", d = "", e = "", f = "", g = new Array;
+            var a = 0, b = "", c = "", d = "", e = "", f = "", g = new Array;
             $(".order_selected").each(function () {
                 var d = $(this).attr("data-title"),
                     e = $(this).attr("data-quantity"),
                     h = $(this).attr("data-price"), i = h * e, j = '<p class="mar_b5 align_l">' + d + '<span class="float_r">' + "x" + e + "</span></p>", k = '{"name":"' + d + '","quantity":"' + e + '"}';
-                g.push(k), b += j, a += i, c = '{"total":"' + total + '","order":[' + g.toString() + "],",
-                    f = b + '<p class="mar_t10 align_r red">合计：&yen;' + total + "</p>"
+                g.push(k), b += j, a+= i, c = '{"total":"' + a + '","order":[' + g.toString() + "],",
+                    f = b + '<p class="mar_t10 align_r red">合计：&yen;' + a + "</p>"
+                 total = a;
             }),
                 a >= 80 && $.msgbox({
                 title: "订单预览",

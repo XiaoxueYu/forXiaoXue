@@ -1,8 +1,6 @@
 var express = require('express'),
 	Comment = require('../models/comment'),
 	router = express.Router();
-
-
 router.post("/user/comment",checkLogin);
 router.post('/user/comment',function(req,res){
 	var _comment = req.body.comment;
@@ -41,7 +39,7 @@ function checkLogin(req, res, next) {
 	if (!req.session.user) {
 		req.flash('error', '未登入');
 		return res.redirect('/login');
-	}
+	} 
 	next();
 }
 function checkNotLogin(req, res, next) {
